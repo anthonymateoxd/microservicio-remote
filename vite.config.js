@@ -34,5 +34,15 @@ export default defineConfig({
     target: 'esnext',
     minify: false,
     cssCodeSplit: false,
+    rollupOptions: {
+      output: {
+        // Ensure consistent chunk naming
+        chunkFileNames: 'assets/[name]-[hash].js',
+      },
+    },
+  },
+  preview: {
+    port: 5001,
+    strictPort: true,
   },
 });
